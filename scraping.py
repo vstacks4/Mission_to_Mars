@@ -7,8 +7,9 @@ import datetime as dt
 
 def scrape_all():
     # Initiate headless driver for deployment
-    browser = Browser("chrome", executable_path={'executable_path': './chromedriver.exe'}, headless=True)
+    browser = Browser("chrome", executable_path="chromedriver", headless=True)
 
+    #browser = Browser("chrome", executable_path={'executable_path': './chromedriver.exe'}, headless=True)
     news_title, news_paragraph = mars_news(browser)
 
     # Run all scraping functions and store results in dictionary
@@ -106,9 +107,6 @@ def mars_facts():
 
 
 # Stop webdriver and return data
-    browser.quit()
-    return data
-
 if __name__ == "__main__":
     # If running as script, print scraped data
     print(scrape_all())
